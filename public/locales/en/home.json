@@ -1,5 +1,31 @@
 {
     "welcome": "Welcome",
     "promotion_content": "4K X brings superspeed game capture to next-gen players. With high-resolution, high frame rate passthrough and capture, it's our most powerful USB capture card ever. still, it set up in a snap and gets out of your way. you won't even know it's there.",
-    "thanks": "Thank you"
+    "thanks": "Thank you",
+    "features": [
+        {
+            "title": "Up to 4K144",
+            "desc": "Capture & Passthrough on native 4K144* monitors"
+        },
+        {
+            "title": "HDMI 2.1",
+            "desc": "Higher resolution, higher frame rates, like 4K144 or 1080p240"
+        },
+        {
+            "title": "Plug & Play",
+            "desc": "Windows, Mac, and iPad* HDMI 2.1 and USB-C cables included"
+        },
+        {
+            "title": "HDR10",
+            "desc": "Deep color, darker shadows"
+        },
+        {
+            "title": "Variable Refresh Rate",
+            "desc": "Zero ghosting, stuttering, or screen tearing"
+        },
+        {
+            "title": "Software Compatible",
+            "desc": "Consoles, Handhelds, PCs, and more"
+        }
+    ]
 }
