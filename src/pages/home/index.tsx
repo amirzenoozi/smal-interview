@@ -14,6 +14,10 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 function Home () {
 	const { t } = useTranslation(['home'])
 	const main = useRef<HTMLElement | null>(null) as React.MutableRefObject<HTMLInputElement>
+	const parallaxTimeLine = gsap.timeline()
+	const featureTimeLine = gsap.timeline()
+	const descriptionTimeLine = gsap.timeline()
+	const deviceTimeline = gsap.timeline()
 	const features: FeatureInterface[] = [
 		{
 			image: '/assets/4K144.svg',
@@ -48,59 +52,84 @@ function Home () {
 	]
 
 	useGSAP(() => {
-		gsap.to('.section__content', {
-			y: 0,
-			scrollTrigger: {
-				trigger: '.section__content',
-				start: 'bottom bottom',
-				end: 'top 20%',
-				scrub: true,
-				markers: false
-			}
+		parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
+		ScrollTrigger.create({
+			animation: parallaxTimeLine,
+			trigger: '.section--blue',
+			start: 'top top',
+			endTrigger: '.section--red',
+			end: 'top 80%',
+			scrub: true,
+			markers: false
 		})
-		// const boxes = gsap.utils.toArray('.box')
-		// boxes.forEach((box: any) => {
-		// 	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-		// 	gsap.to(box, {
-		// 		y: -300,
-		// 		scrollTrigger: {
-		// 			trigger: box,
-		// 			start: 'bottom bottom',
-		// 			end: 'top 20%',
-		// 			scrub: true,
-		// 			markers: false
-		// 		}
-		// 	})
-		// })
-	},	{ scope: main })
+
+		featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+		featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+		featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+		featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+		featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+		featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+		ScrollTrigger.create({
+			animation: featureTimeLine,
+			trigger: '.section--blue',
+			start: 'bottom 35%',
+			endTrigger: '.section--red',
+			end: 'top bottom',
+			scrub: true,
+			markers: false
+		})
+
+		descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
+		ScrollTrigger.create({
+			animation: descriptionTimeLine,
+			trigger: '.section--blue',
+			start: 'bottom 75%',
+			endTrigger: '.section--red',
+			end: 'top bottom',
+			scrub: true,
+			markers: false
+		})
+
+		deviceTimeline.from('#pinned-image', { yPercent: -50 })
+		ScrollTrigger.create({
+			animation: deviceTimeline,
+			trigger: '.section--blue',
+			start: 'bottom 50%',
+			endTrigger: '.section--red',
+			end: 'top 80%',
+			scrub: true,
+			markers: false
+		})
+	}, { scope: main })
 
 	return (
 		<>
-			<section className={'page'}>
+			<section className={'page'} ref={main}>
 				<Container>
 					<div className={['section', 'section--blue', 'section--centered'].join(' ')}>
 						<p className={'section__title'}>{t('welcome')}</p>
 					</div>
-					<div className={['section', 'section--parallax'].join(' ')} ref={main}>
-						<div className={'section__content'}>
-							<p className={'section__desc'}>{t('promotion_content')}</p>
-							<FlexRow>
-								{
-									features.map((feature: FeatureInterface, index: number) => (
-										<FlexCol key={index} xs={12} sm={8}>
-											<div className={'feature'}>
-												<figure className={'figure__thumb'}>
-													<img src={feature.image} alt={feature.title}/>
-												</figure>
-												<div className={'feature__content'}>
-													<h3>{feature.title}</h3>
-													<p>{feature.desc}</p>
-												</div>
+					<div id={'features-wrapper'} className={['section', 'section--parallax'].join(' ')}>
+						<p className={'section__desc'} id={'content_desc'}>{t('promotion_content')}</p>
+						<FlexRow>
+							{
+								features.map((feature: FeatureInterface, index: number) => (
+									<FlexCol key={index} xs={12} sm={8}>
+										<div className={'feature'} id={`feature_${index}`}>
+											<figure className={'figure__thumb'}>
+												<img src={feature.image} alt={feature.title}/>
+											</figure>
+											<div className={'feature__content'}>
+												<h3>{feature.title}</h3>
+												<p>{feature.desc}</p>
 											</div>
-										</FlexCol>
-									))
-								}
-							</FlexRow>
+										</div>
+									</FlexCol>
+								))
+							}
+						</FlexRow>
+						<div className={'pinned-image'} id={'pinned-image'}>
+							<img src={'./assets/capturecard.png'} alt='Capture Card' />
 						</div>
 					</div>
 					<div className={['section', 'section--red', 'section--centered'].join(' ')}>
