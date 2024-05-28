@@ -12,7 +12,6 @@ The project is developed with reusable components and the components are develop
 - [x] Mobile First Design
 - [x] Reusable Components
 - [x] Add StoryBook
-- [x] Aggregation of Data From Servers (Memory)
 - [ ] Unit Test
   - [x] Button Component
   - [x] FlexRow
