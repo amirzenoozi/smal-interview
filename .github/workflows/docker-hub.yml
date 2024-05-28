@@ -1,0 +1,29 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Unit Tests
+        run: |
+          echo "Running Unit Tests"
+          yarn install
+          yarn run test:ci
+          echo "Unit Tests Completed"
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build & Push Image
+        run: |
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
+          docker image build . -t amirzenoozi/smal-interview:latest
+          docker push amirzenoozi/smal-interview:latest

@@ -1,0 +1,38 @@
+@use "sass:math";
+@import '../../styles/index';
+
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #0E131E;
+    color: #FFFFFF;
+}
+
+.section {
+    min-height: 100vh;
+    background-color: #2D2D2D;
+    padding: px-to-rem(32) px-to-rem(16);
+
+    &__desc {
+        transform: translateY(25vh);
+        text-align: center;
+        font-size: px-to-rem(24);
+        text-transform: uppercase;
+    }
+
+    &--red {
+        background-color: #FF0000;
+    }
+    &--blue {
+        background-color: #0000FF;
+    }
+
+    @include respond-to(md) {
+        padding: px-to-rem(16) px-to-rem(32);
+    }
+}
