@@ -70,6 +70,10 @@
             padding: px-to-rem(1200) px-to-rem(48) px-to-rem(80);
         }
     }
+    &--no-padding {
+        margin-right: px-to-rem(-16);
+        margin-left: px-to-rem(-16);
+    }
 }
 
 .feature {
