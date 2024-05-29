@@ -266,7 +266,7 @@ function Home () {
 		<>
 			<section className={'page'} ref={main}>
 				<Container>
-					<Section classNames={['section--blue', 'section--centered']}>
+					<Section classNames={['section--blue', 'section--centered', 'section--no-padding']}>
 						<p className={'section__title'}>{t('welcome')}</p>
 					</Section>
 					<Section id={'features-wrapper'} classNames={['section--parallax']}>
@@ -294,7 +294,7 @@ function Home () {
 							</div>
 						</>
 					</Section>
-					<Section classNames={['section--red', 'section--centered']}>
+					<Section classNames={['section--red', 'section--centered', 'section--no-padding']}>
 						<p className={'section__title'}>{t('thanks')}</p>
 					</Section>
 				</Container>
