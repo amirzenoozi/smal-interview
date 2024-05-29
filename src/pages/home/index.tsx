@@ -54,6 +54,7 @@ function Home () {
 	]
 
 	useGSAP(() => {
+		// Animating The Wrapper By Pulling It Down From The Top
 		parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
 		matchMedia.add('(min-width: 992px)', () => {
 			ScrollTrigger.create({
@@ -100,6 +101,7 @@ function Home () {
 			})
 		})
 
+		// Animating The Features Items
 		matchMedia.add('(min-width: 992px)', () => {
 			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
 			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
@@ -169,6 +171,7 @@ function Home () {
 			})
 		})
 
+		// Animating The Description Content
 		descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
 		matchMedia.add('(min-width: 992px)', () => {
 			ScrollTrigger.create({
@@ -215,6 +218,7 @@ function Home () {
 			})
 		})
 
+		// Animating The Pinned Image To Have Better Animation
 		deviceTimeline.from('#pinned-image', { yPercent: -50 })
 		matchMedia.add('(min-width: 992px)', () => {
 			ScrollTrigger.create({
