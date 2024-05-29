@@ -58,6 +58,7 @@
     }
     &--parallax {
         z-index: 1;
+        padding: px-to-rem(640) px-to-rem(8) px-to-rem(80);
 
         @include respond-to(lg) {
             padding: px-to-rem(640) px-to-rem(96) px-to-rem(80);
@@ -77,8 +78,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: px-to-rem(4) px-to-rem(8);
+    padding: px-to-rem(4) px-to-rem(4);
 
+    @include respond-to(lg) {
+        padding: px-to-rem(4) px-to-rem(48);
+    }
     @include respond-to(md) {
         padding: px-to-rem(4) px-to-rem(48);
     }

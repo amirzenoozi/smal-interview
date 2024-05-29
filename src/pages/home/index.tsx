@@ -88,6 +88,17 @@ function Home () {
 				markers: false
 			})
 		})
+		matchMedia.add('(max-width: 576px)', () => {
+			ScrollTrigger.create({
+				animation: parallaxTimeLine,
+				trigger: '.section--blue',
+				start: 'top top',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
+		})
 
 		matchMedia.add('(min-width: 992px)', () => {
 			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
@@ -140,6 +151,23 @@ function Home () {
 				markers: false
 			})
 		})
+		matchMedia.add('(max-width: 576px)', () => {
+			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 2 }, 1)
+			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 3 }, 2)
+			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 3 }, 2)
+			ScrollTrigger.create({
+				animation: featureTimeLine,
+				trigger: '.section--blue',
+				start: 'bottom 35%',
+				endTrigger: '.section--red',
+				end: 'top bottom',
+				scrub: true,
+				markers: false
+			})
+		})
 
 		descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
 		matchMedia.add('(min-width: 992px)', () => {
@@ -165,6 +193,17 @@ function Home () {
 			})
 		})
 		matchMedia.add('(min-width: 576px)', () => {
+			ScrollTrigger.create({
+				animation: descriptionTimeLine,
+				trigger: '.section--blue',
+				start: 'bottom 25%',
+				endTrigger: '.section--red',
+				end: 'top bottom',
+				scrub: true,
+				markers: false
+			})
+		})
+		matchMedia.add('(max-width: 576px)', () => {
 			ScrollTrigger.create({
 				animation: descriptionTimeLine,
 				trigger: '.section--blue',
@@ -210,6 +249,17 @@ function Home () {
 				markers: false
 			})
 		})
+		matchMedia.add('(max-width: 576px)', () => {
+			ScrollTrigger.create({
+				animation: deviceTimeline,
+				trigger: '.section--blue',
+				start: 'bottom 50%',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
+		})
 	}, { scope: main })
 
 	return (
@@ -225,7 +275,7 @@ function Home () {
 							<FlexRow>
 								{
 									features.map((feature: FeatureInterface, index: number) => (
-										<FlexCol key={index} xs={24} sm={12} md={8}>
+										<FlexCol key={index} xs={12} sm={12} md={8}>
 											<div className={'feature'} id={`feature_${index}`}>
 												<figure className={'figure__thumb'}>
 													<img src={feature.image} alt={feature.title}/>
