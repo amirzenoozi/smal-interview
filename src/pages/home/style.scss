@@ -59,8 +59,14 @@
     &--parallax {
         z-index: 1;
 
+        @include respond-to(lg) {
+            padding: px-to-rem(640) px-to-rem(96) px-to-rem(80);
+        }
         @include respond-to(md) {
             padding: px-to-rem(640) px-to-rem(96) px-to-rem(80);
+        }
+        @include respond-to(sm) {
+            padding: px-to-rem(1200) px-to-rem(48) px-to-rem(80);
         }
     }
 }
@@ -75,6 +81,9 @@
 
     @include respond-to(md) {
         padding: px-to-rem(4) px-to-rem(48);
+    }
+    @include respond-to(sm) {
+        padding: px-to-rem(4) px-to-rem(12);
     }
 
     figure {
