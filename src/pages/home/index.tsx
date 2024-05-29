@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { useTranslation } from 'react-i18next'
 import { type FeatureInterface } from './feature.interface'
+import Section from './components/section'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -106,35 +107,37 @@ function Home () {
 		<>
 			<section className={'page'} ref={main}>
 				<Container>
-					<div className={['section', 'section--blue', 'section--centered'].join(' ')}>
+					<Section classNames={['section--blue', 'section--centered']}>
 						<p className={'section__title'}>{t('welcome')}</p>
-					</div>
-					<div id={'features-wrapper'} className={['section', 'section--parallax'].join(' ')}>
-						<p className={'section__desc'} id={'content_desc'}>{t('promotion_content')}</p>
-						<FlexRow>
-							{
-								features.map((feature: FeatureInterface, index: number) => (
-									<FlexCol key={index} xs={12} sm={8}>
-										<div className={'feature'} id={`feature_${index}`}>
-											<figure className={'figure__thumb'}>
-												<img src={feature.image} alt={feature.title}/>
-											</figure>
-											<div className={'feature__content'}>
-												<h3>{feature.title}</h3>
-												<p>{feature.desc}</p>
+					</Section>
+					<Section id={'features-wrapper'} classNames={['section--parallax']}>
+						<>
+							<p className={'section__desc'} id={'content_desc'}>{t('promotion_content')}</p>
+							<FlexRow>
+								{
+									features.map((feature: FeatureInterface, index: number) => (
+										<FlexCol key={index} xs={24} sm={12} md={8}>
+											<div className={'feature'} id={`feature_${index}`}>
+												<figure className={'figure__thumb'}>
+													<img src={feature.image} alt={feature.title}/>
+												</figure>
+												<div className={'feature__content'}>
+													<h3>{feature.title}</h3>
+													<p>{feature.desc}</p>
+												</div>
 											</div>
-										</div>
-									</FlexCol>
-								))
-							}
-						</FlexRow>
-						<div className={'pinned-image'} id={'pinned-image'}>
-							<img src={'./assets/capturecard.png'} alt='Capture Card' />
-						</div>
-					</div>
-					<div className={['section', 'section--red', 'section--centered'].join(' ')}>
+										</FlexCol>
+									))
+								}
+							</FlexRow>
+							<div className={'pinned-image'} id={'pinned-image'}>
+								<img src={'./assets/capturecard.png'} alt='Capture Card'/>
+							</div>
+						</>
+					</Section>
+					<Section classNames={['section--red', 'section--centered']}>
 						<p className={'section__title'}>{t('thanks')}</p>
-					</div>
+					</Section>
 				</Container>
 			</section>
 		</>
