@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Univers55Roman';
+    src: local('Univers55Roman'), url('../fonts/Univers55Roman.woff2') format('woff');
+}
+
+@font-face {
+    font-family: 'Univers65Bold';
+    src: local('Univers65Bold'), url('../fonts/Univers65Bold.woff2') format('woff');
+}
+
+@font-face {
+    font-family: 'Univers67BoldCondensed';
+    src: local('Univers67BoldCondensed'), url('../fonts/Univers67BoldCondensed.woff2') format('woff');
+}
+
+@mixin font-heading-1 {
+    font-family: 'Univers65Bold', sans-serif;
+    font-size: px-to-rem(36);
+    line-height: 1.2;
+    font-weight: 700;
+
+    @include respond-to(md) {
+        font-size: px-to-rem(48);
+    }
+}
+
+@mixin font-desc {
+    font-family: 'Univers67BoldCondensed', sans-serif;
+    font-size: px-to-rem(22);
+    line-height: 1.4;
+    font-weight: 400;
+
+    @include respond-to(md) {
+        font-size: px-to-rem(28);
+    }
+}
+
+@mixin font-heading-2 {
+    font-family: 'Univers65Bold', sans-serif;
+    font-size: px-to-rem(18);
+    line-height: 1.2;
+    font-weight: 600;
+
+    @include respond-to(md) {
+        font-size: px-to-rem(22);
+    }
+}
