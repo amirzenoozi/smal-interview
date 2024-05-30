@@ -18,7 +18,7 @@ function Home () {
 	const matchMedia = gsap.matchMedia()
 	const features: FeatureInterface[] = [
 		{
-			image: '/assets/4K144.svg',
+			image: '/assets/4k144.svg',
 			title: t('features.0.title'),
 			desc: t('features.0.desc')
 		},
