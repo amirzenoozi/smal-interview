@@ -4,21 +4,23 @@ import { initReactI18next } from 'react-i18next'
 
 /* eslint-disable */
 i18n.use(Backend)
-  .use(initReactI18next)
-  .init(
-    {
-      lng: 'en',
-      fallbackLng: ['en', 'fa'],
-      debug: false,
-      ns: ['home'],
-      defaultNS: 'common',
-      interpolation: {
-        escapeValue: false
-      }
-    }, (err, t) => {
-      if (err !== undefined) { console.warn('something went wrong loading', err) }
-    }
-  )
+	.use(initReactI18next)
+	.init(
+		{
+			lng: 'en',
+			fallbackLng: ['en', 'de', 'nl', 'it'],
+			debug: false,
+			ns: ['home'],
+			defaultNS: 'common',
+			interpolation: {
+				escapeValue: false
+			}
+		}, (err, t) => {
+			if (err !== undefined) {
+				console.warn('something went wrong loading', err)
+			}
+		}
+	)
 
 /* eslint-enable */
 export default i18n
