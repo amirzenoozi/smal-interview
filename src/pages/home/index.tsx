@@ -9,6 +9,7 @@ import { useGSAP } from '@gsap/react'
 import { useTranslation } from 'react-i18next'
 import { type FeatureInterface } from './feature.interface'
 import Section from './components/section'
+import SpriteIcon from '../../components/sprite-icon'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -18,32 +19,32 @@ function Home () {
 	const matchMedia = gsap.matchMedia()
 	const features: FeatureInterface[] = [
 		{
-			image: '/assets/4k144.svg',
+			image: '4k144',
 			title: t('features.0.title'),
 			desc: t('features.0.desc')
 		},
 		{
-			image: '/assets/hdmi21.svg',
+			image: 'hdmi21',
 			title: t('features.1.title'),
 			desc: t('features.1.desc')
 		},
 		{
-			image: '/assets/plugnplay.svg',
+			image: 'plugnplay',
 			title: t('features.2.title'),
 			desc: t('features.2.desc')
 		},
 		{
-			image: '/assets/hdr10.svg',
+			image: 'hdr10',
 			title: t('features.3.title'),
 			desc: t('features.3.desc')
 		},
 		{
-			image: '/assets/variablerefreshrate.svg',
+			image: 'variablerefreshrate',
 			title: t('features.4.title'),
 			desc: t('features.4.desc')
 		},
 		{
-			image: '/assets/softwarecompatible.svg',
+			image: 'softwarecompatible',
 			title: t('features.5.title'),
 			desc: t('features.5.desc')
 		}
@@ -234,9 +235,7 @@ function Home () {
 									features.map((feature: FeatureInterface, index: number) => (
 										<FlexCol key={index} xs={12} sm={12} md={8}>
 											<div className={'feature'} id={`feature_${index}`}>
-												<figure className={'figure__thumb'}>
-													<img src={feature.image} alt={feature.title}/>
-												</figure>
+												<SpriteIcon classNames={['figure__thumb']} iconName={feature.image} width={120} height={120} />
 												<div className={'feature__content'}>
 													<h3>{feature.title}</h3>
 													<p>{feature.desc}</p>

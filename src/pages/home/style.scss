@@ -106,6 +106,13 @@
         margin-bottom: px-to-rem(16);
         text-align: center;
     }
+    svg {
+        width: px-to-rem(120);
+        height: px-to-rem(120);
+        fill: #FFFFFF;
+        position: relative;
+        z-index: 3;
+    }
     h3 {
         @include font-heading-2;
         text-align: center;
