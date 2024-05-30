@@ -1,0 +1,31 @@
+{
+    "welcome": "Welkom",
+    "promotion_content": "4K X brengt supersnelle game-opname naar next-gen spelers. Met hoge resolutie en hoge frame rate passthrough en opname is het onze krachtigste USB-opnamekaart ooit. Toch is het in een oogwenk ingesteld en staat het niet in de weg. Je zult niet eens weten dat het er is.",
+    "thanks": "Dank je",
+    "features": [
+        {
+            "title": "Tot 4K144",
+            "desc": "Opname & Passthrough op native 4K144* monitoren"
+        },
+        {
+            "title": "HDMI 2.1",
+            "desc": "Hogere resolutie, hogere frame rates, zoals 4K144 of 1080p240"
+        },
+        {
+            "title": "Plug & Play",
+            "desc": "Windows, Mac en iPad* HDMI 2.1 en USB-C kabels inbegrepen"
+        },
+        {
+            "title": "HDR10",
+            "desc": "Diepe kleuren, donkerdere schaduwen"
+        },
+        {
+            "title": "Variabele Vernieuwingsfrequentie",
+            "desc": "Geen ghosting, stotteren of tearing"
+        },
+        {
+            "title": "Software Compatibel",
+            "desc": "Consoles, Handhelds, PC's en meer"
+        }
+    ]
+}
