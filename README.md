@@ -9,11 +9,13 @@ The project is developed with reusable components and the components are develop
 ## Objectives
 
 - [x] Developed Pixel Perfect Design
-- [x] Mobile First Design
 - [x] Reusable Components
 - [x] Add StoryBook
+- [x] Support Multiple Languages
+- [x] Variable Based Typography System
 - [ ] UX
   - [x] Prevent Animating When `prefers-reduced-motion` is `reduce`
+  - [x] Mobile First Design
 - [ ] Unit Test
   - [x] Button Component
   - [x] FlexRow
