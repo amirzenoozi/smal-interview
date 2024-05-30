@@ -1,0 +1,31 @@
+{
+    "welcome": "Benvenuto",
+    "promotion_content": "4K X porta la cattura di giochi ad alta velocità ai giocatori di nuova generazione. Con passthrough e cattura ad alta risoluzione e frame rate elevato, è la nostra scheda di acquisizione USB più potente di sempre. Tuttavia, si configura in un attimo e non intralcia. Non saprai nemmeno che è lì.",
+    "thanks": "Grazie",
+    "features": [
+        {
+            "title": "Fino a 4K144",
+            "desc": "Cattura e Passthrough su monitor nativi 4K144*"
+        },
+        {
+            "title": "HDMI 2.1",
+            "desc": "Risoluzione più alta, frame rate più elevati, come 4K144 o 1080p240"
+        },
+        {
+            "title": "Plug & Play",
+            "desc": "Windows, Mac e iPad* Cavi HDMI 2.1 e USB-C inclusi"
+        },
+        {
+            "title": "HDR10",
+            "desc": "Colori profondi, ombre più scure"
+        },
+        {
+            "title": "Frequenza di aggiornamento variabile",
+            "desc": "Nessun ghosting, stuttering o tearing dello schermo"
+        },
+        {
+            "title": "Compatibile con il software",
+            "desc": "Console, portatili, PC e altro"
+        }
+    ]
+}
