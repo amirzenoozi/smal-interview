@@ -13,6 +13,7 @@ The project is developed with reusable components and the components are develop
 - [x] Add StoryBook
 - [x] Support Multiple Languages
 - [x] Variable Based Typography System
+- [x] Implement SpriteSvg Icon System
 - [ ] UX
   - [x] Prevent Animating When `prefers-reduced-motion` is `reduce`
   - [x] Mobile First Design
