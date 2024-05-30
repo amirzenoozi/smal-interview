@@ -9,6 +9,7 @@
     "test:ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint --ext ts,tsx,js,jsx src",
+    "sprite": "svg2sprite ./icons ./public/assets/sprite.svg --iconPrefix=smal_ --stripAttrs class",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -35,6 +36,7 @@
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-tooltip": "^5.25.0",
+    "svg2sprite-cli": "^2.0.1",
     "typescript": "*",
     "web-vitals": "^2.1.4"
   },
