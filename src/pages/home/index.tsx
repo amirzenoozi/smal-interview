@@ -15,10 +15,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 function Home () {
 	const { t } = useTranslation(['home'])
 	const main = useRef<HTMLElement | null>(null) as React.MutableRefObject<HTMLInputElement>
-	const parallaxTimeLine = gsap.timeline()
-	const featureTimeLine = gsap.timeline()
-	const descriptionTimeLine = gsap.timeline()
-	const deviceTimeline = gsap.timeline()
 	const matchMedia = gsap.matchMedia()
 	const features: FeatureInterface[] = [
 		{
@@ -54,148 +50,42 @@ function Home () {
 	]
 
 	useGSAP(() => {
-		// Animating The Wrapper By Pulling It Down From The Top
-		parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
-		matchMedia.add('(min-width: 992px)', () => {
-			ScrollTrigger.create({
-				animation: parallaxTimeLine,
-				trigger: '.section--blue',
-				start: 'top top',
-				endTrigger: '.section--red',
-				end: 'top 80%',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(min-width: 768px)', () => {
-			ScrollTrigger.create({
-				animation: parallaxTimeLine,
-				trigger: '.section--blue',
-				start: 'top top',
-				endTrigger: '.section--red',
-				end: 'top 80%',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(min-width: 576px)', () => {
-			ScrollTrigger.create({
-				animation: parallaxTimeLine,
-				trigger: '.section--blue',
-				start: 'top top',
-				endTrigger: '.section--red',
-				end: 'top 80%',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(max-width: 576px)', () => {
-			ScrollTrigger.create({
-				animation: parallaxTimeLine,
-				trigger: '.section--blue',
-				start: 'top top',
-				endTrigger: '.section--red',
-				end: 'top 80%',
-				scrub: true,
-				markers: false
-			})
-		})
+		matchMedia.add('(max-width: 576px) and (prefers-reduced-motion: no-preference)', () => {
+			const parallaxTimeLine = gsap.timeline()
+			const featureTimeLine = gsap.timeline()
+			const descriptionTimeLine = gsap.timeline()
+			const deviceTimeline = gsap.timeline()
 
-		// Animating The Features Items
-		matchMedia.add('(min-width: 992px)', () => {
-			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			ScrollTrigger.create({
-				animation: featureTimeLine,
-				trigger: '.section--blue',
-				start: 'bottom 35%',
-				endTrigger: '.section--red',
-				end: 'top bottom',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(min-width: 768px)', () => {
-			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			ScrollTrigger.create({
-				animation: featureTimeLine,
-				trigger: '.section--blue',
-				start: 'bottom 35%',
-				endTrigger: '.section--red',
-				end: 'top bottom',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(min-width: 576px)', () => {
+			parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
+
 			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
 			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
 			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 2 }, 1)
 			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
 			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 3 }, 2)
 			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 3 }, 2)
-			ScrollTrigger.create({
-				animation: featureTimeLine,
-				trigger: '.section--blue',
-				start: 'bottom 35%',
-				endTrigger: '.section--red',
-				end: 'top bottom',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(max-width: 576px)', () => {
-			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
-			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
-			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 3 }, 2)
-			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 3 }, 2)
-			ScrollTrigger.create({
-				animation: featureTimeLine,
-				trigger: '.section--blue',
-				start: 'bottom 35%',
-				endTrigger: '.section--red',
-				end: 'top bottom',
-				scrub: true,
-				markers: false
-			})
-		})
 
-		// Animating The Description Content
-		descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
-		matchMedia.add('(min-width: 992px)', () => {
+			descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
+
+			// Animating The Wrapper By Pulling It Down From The Top
 			ScrollTrigger.create({
-				animation: descriptionTimeLine,
+				animation: parallaxTimeLine,
 				trigger: '.section--blue',
-				start: 'bottom 75%',
+				start: 'top top',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
+			ScrollTrigger.create({
+				animation: featureTimeLine,
+				trigger: '.section--blue',
+				start: 'bottom 35%',
 				endTrigger: '.section--red',
 				end: 'top bottom',
 				scrub: true,
 				markers: false
 			})
-		})
-		matchMedia.add('(min-width: 768px)', () => {
-			ScrollTrigger.create({
-				animation: descriptionTimeLine,
-				trigger: '.section--blue',
-				start: 'bottom 75%',
-				endTrigger: '.section--red',
-				end: 'top bottom',
-				scrub: true,
-				markers: false
-			})
-		})
-		matchMedia.add('(min-width: 576px)', () => {
 			ScrollTrigger.create({
 				animation: descriptionTimeLine,
 				trigger: '.section--blue',
@@ -205,8 +95,54 @@ function Home () {
 				scrub: true,
 				markers: false
 			})
+			ScrollTrigger.create({
+				animation: deviceTimeline,
+				trigger: '.section--blue',
+				start: 'bottom 50%',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
 		})
-		matchMedia.add('(max-width: 576px)', () => {
+		matchMedia.add('(min-width: 577px) and (max-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+			const parallaxTimeLine = gsap.timeline()
+			const featureTimeLine1 = gsap.timeline()
+			const descriptionTimeLine = gsap.timeline()
+			const deviceTimeline = gsap.timeline()
+
+			parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
+
+			featureTimeLine1.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine1.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine1.from('#feature_2', { yPercent: 10, opacity: 0, delay: 2 }, 1)
+			featureTimeLine1.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+			featureTimeLine1.from('#feature_4', { yPercent: 15, opacity: 0, delay: 3 }, 2)
+			featureTimeLine1.from('#feature_5', { yPercent: 15, opacity: 0, delay: 3 }, 2)
+
+			descriptionTimeLine.from('#content_desc', { yPercent: 20, opacity: 0 })
+
+			// Animating The Wrapper By Pulling It Down From The Top
+			ScrollTrigger.create({
+				animation: parallaxTimeLine,
+				trigger: '.section--blue',
+				start: 'top top',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
+			ScrollTrigger.create({
+				animation: featureTimeLine1,
+				// trigger: '.section--parallax',
+				// start: 'bottom 50%',
+				trigger: '.section--blue',
+				start: 'bottom 35%',
+				endTrigger: '.section--red',
+				end: 'top bottom',
+				scrub: true,
+				markers: false
+			})
 			ScrollTrigger.create({
 				animation: descriptionTimeLine,
 				trigger: '.section--blue',
@@ -216,44 +152,61 @@ function Home () {
 				scrub: true,
 				markers: false
 			})
+			ScrollTrigger.create({
+				animation: deviceTimeline,
+				trigger: '.section--blue',
+				start: 'bottom 50%',
+				endTrigger: '.section--red',
+				end: 'top 80%',
+				scrub: true,
+				markers: false
+			})
 		})
+		matchMedia.add('(min-width: 769px) and (prefers-reduced-motion: no-preference)', () => {
+			const parallaxTimeLine = gsap.timeline()
+			const featureTimeLine = gsap.timeline()
+			const descriptionTimeLine = gsap.timeline()
+			const deviceTimeline = gsap.timeline()
 
-		// Animating The Pinned Image To Have Better Animation
-		deviceTimeline.from('#pinned-image', { yPercent: -50 })
-		matchMedia.add('(min-width: 992px)', () => {
+			parallaxTimeLine.from('.section--parallax', { yPercent: -100 })
+
+			featureTimeLine.from('#feature_0', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine.from('#feature_1', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine.from('#feature_2', { yPercent: 10, opacity: 0, delay: 1 }, 0)
+			featureTimeLine.from('#feature_3', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+			featureTimeLine.from('#feature_4', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+			featureTimeLine.from('#feature_5', { yPercent: 15, opacity: 0, delay: 2 }, 1)
+
+			descriptionTimeLine.from('#content_desc', { y: '30vh', opacity: 0 })
+
+			// Animating The Wrapper By Pulling It Down From The Top
 			ScrollTrigger.create({
-				animation: deviceTimeline,
+				animation: parallaxTimeLine,
 				trigger: '.section--blue',
-				start: 'bottom 50%',
+				start: 'top top',
 				endTrigger: '.section--red',
 				end: 'top 80%',
 				scrub: true,
 				markers: false
 			})
-		})
-		matchMedia.add('(min-width: 768px)', () => {
 			ScrollTrigger.create({
-				animation: deviceTimeline,
+				animation: featureTimeLine,
 				trigger: '.section--blue',
-				start: 'bottom 50%',
+				start: 'bottom 15%',
 				endTrigger: '.section--red',
-				end: 'top 80%',
+				end: 'top bottom',
 				scrub: true,
 				markers: false
 			})
-		})
-		matchMedia.add('(min-width: 576px)', () => {
 			ScrollTrigger.create({
-				animation: deviceTimeline,
+				animation: descriptionTimeLine,
 				trigger: '.section--blue',
-				start: 'bottom 50%',
+				start: 'bottom 30%',
 				endTrigger: '.section--red',
-				end: 'top 80%',
+				end: 'top bottom',
 				scrub: true,
 				markers: false
 			})
-		})
-		matchMedia.add('(max-width: 576px)', () => {
 			ScrollTrigger.create({
 				animation: deviceTimeline,
 				trigger: '.section--blue',

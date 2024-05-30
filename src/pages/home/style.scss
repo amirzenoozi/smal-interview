@@ -58,16 +58,24 @@
     }
     &--parallax {
         z-index: 1;
-        padding: px-to-rem(640) px-to-rem(8) px-to-rem(80);
+        padding: px-to-rem(2000) px-to-rem(8) px-to-rem(32);
 
-        @include respond-to(lg) {
-            padding: px-to-rem(640) px-to-rem(96) px-to-rem(80);
-        }
-        @include respond-to(md) {
-            padding: px-to-rem(640) px-to-rem(96) px-to-rem(80);
+        @include respond-to('450px') {
+            padding: px-to-rem(1200) px-to-rem(32) px-to-rem(80);
         }
         @include respond-to(sm) {
-            padding: px-to-rem(1200) px-to-rem(48) px-to-rem(80);
+            padding: px-to-rem(1000) px-to-rem(32) px-to-rem(80);
+        }
+        @include respond-to(md) {
+            padding: px-to-rem(900) px-to-rem(32) px-to-rem(80);
+        }
+        @include respond-to(lg) {
+            padding: px-to-rem(580) px-to-rem(96) px-to-rem(80);
+        }
+
+        // For Whom Hates Animations (Reduced Motion)
+        @media (prefers-reduced-motion: reduce) {
+            padding: px-to-rem(64) px-to-rem(64) px-to-rem(32);
         }
     }
     &--no-padding {
@@ -75,7 +83,9 @@
         margin-left: px-to-rem(-16);
     }
 }
-
+.pinned-image {
+    margin-top: px-to-rem(48);
+}
 .feature {
     position: relative;
     display: flex;
