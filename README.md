@@ -12,6 +12,8 @@ The project is developed with reusable components and the components are develop
 - [x] Mobile First Design
 - [x] Reusable Components
 - [x] Add StoryBook
+- [ ] UX
+  - [x] Prevent Animating When `prefers-reduced-motion` is `reduce`
 - [ ] Unit Test
   - [x] Button Component
   - [x] FlexRow
