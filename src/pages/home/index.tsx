@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Container from '../../components/container'
 import './style.scss'
 import FlexRow from '../../components/flex-row'
@@ -10,10 +10,13 @@ import { useTranslation } from 'react-i18next'
 import { type FeatureInterface } from './feature.interface'
 import Section from './components/section'
 import SpriteIcon from '../../components/sprite-icon'
+import { useSearchParams } from 'react-router-dom'
+import i18n from 'i18next'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 function Home () {
+	const [params] = useSearchParams()
 	const { t } = useTranslation(['home'])
 	const main = useRef<HTMLElement | null>(null) as React.MutableRefObject<HTMLInputElement>
 	const matchMedia = gsap.matchMedia()
@@ -219,6 +222,10 @@ function Home () {
 			})
 		})
 	}, { scope: main })
+
+	useEffect(() => {
+		void i18n.changeLanguage(params.get('lng') ?? 'en')
+	}, [])
 
 	return (
 		<>

@@ -91,14 +91,14 @@
     justify-content: center;
     padding: px-to-rem(4) px-to-rem(4);
 
-    @include respond-to(lg) {
-        padding: px-to-rem(4) px-to-rem(48);
+    @include respond-to(sm) {
+        padding: px-to-rem(4) px-to-rem(12);
     }
     @include respond-to(md) {
         padding: px-to-rem(4) px-to-rem(48);
     }
-    @include respond-to(sm) {
-        padding: px-to-rem(4) px-to-rem(12);
+    @include respond-to(lg) {
+        padding: px-to-rem(4) px-to-rem(48);
     }
 
     figure {
