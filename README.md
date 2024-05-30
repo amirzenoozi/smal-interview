@@ -11,12 +11,13 @@ The project is developed with reusable components and the components are develop
 - [x] Developed Pixel Perfect Design
 - [x] Reusable Components
 - [x] Add StoryBook
-- [x] Support Multiple Languages
+- [x] Support Multiple Languages (English, German, Italian, Dutch)
 - [x] Variable Based Typography System
 - [x] Implement SpriteSvg Icon System
 - [ ] UX
   - [x] Prevent Animating When `prefers-reduced-motion` is `reduce`
   - [x] Mobile First Design
+  - [x] Change Lang By `QueryParams`; Just Set/Change `lng`
 - [ ] Unit Test
   - [x] Button Component
   - [x] FlexRow
