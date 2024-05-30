@@ -1,0 +1,31 @@
+{
+    "welcome": "Willkommen",
+    "promotion_content": "4K X bringt superschnelles Spielaufzeichnen zu Next-Gen-Spielern. Mit hochauflösendem, hochfrequentem Passthrough und Aufzeichnung ist es unsere leistungsstärkste USB-Aufnahmekarte aller Zeiten. Trotzdem lässt es sich im Handumdrehen einrichten und steht Ihnen nicht im Weg. Sie werden nicht einmal wissen, dass es da ist.",
+    "thanks": "Vielen Dank",
+    "features": [
+        {
+            "title": "Bis zu 4K144",
+            "desc": "Aufnahme und Passthrough auf nativen 4K144* Monitoren"
+        },
+        {
+            "title": "HDMI 2.1",
+            "desc": "Höhere Auflösung, höhere Bildraten, wie 4K144 oder 1080p240"
+        },
+        {
+            "title": "Plug & Play",
+            "desc": "Windows, Mac und iPad* HDMI 2.1 und USB-C Kabel inklusive"
+        },
+        {
+            "title": "HDR10",
+            "desc": "Tiefe Farben, dunklere Schatten"
+        },
+        {
+            "title": "Variable Bildwiederholrate",
+            "desc": "Kein Ghosting, Stottern oder Bildschirmrisse"
+        },
+        {
+            "title": "Softwarekompatibel",
+            "desc": "Konsolen, Handhelds, PCs und mehr"
+        }
+    ]
+}
