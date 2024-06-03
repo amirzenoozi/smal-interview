@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from 'react'
 import Container from '../../components/container'
-import './style.scss'
 import FlexRow from '../../components/flex-row'
 import FlexCol from '../../components/flex-col'
+import FeatureCard from './components/feature'
+import Section from './components/section'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { useTranslation } from 'react-i18next'
 import { type FeatureInterface } from './feature.interface'
-import Section from './components/section'
-import SpriteIcon from '../../components/sprite-icon'
 import { useSearchParams } from 'react-router-dom'
 import i18n from 'i18next'
+import './style.scss'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -241,13 +241,12 @@ function Home () {
 								{
 									features.map((feature: FeatureInterface, index: number) => (
 										<FlexCol key={index} xs={12} sm={12} md={8}>
-											<div className={'feature'} id={`feature_${index}`}>
-												<SpriteIcon classNames={['figure__thumb']} iconName={feature.image} width={120} height={120} />
-												<div className={'feature__content'}>
-													<h3>{feature.title}</h3>
-													<p>{feature.desc}</p>
-												</div>
-											</div>
+											<FeatureCard
+												id={`feature_${index}`}
+												image={feature.image}
+												title={feature.title}
+												desc={feature.desc}
+											/>
 										</FlexCol>
 									))
 								}
