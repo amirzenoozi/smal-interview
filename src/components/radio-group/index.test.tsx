@@ -27,8 +27,8 @@ describe('RadioGroup', () => {
 	test('Multiple Radio', () => {
 		render(<RadioGroup options={radioOptions} name={'metric'} value={'all'} clickHandler={(msg) => { console.log(msg) }} />)
 		const allLabel = screen.getByLabelText(/All/i)
-		const cpuLabel = screen.getByLabelText(/CPU/i)
-		const memoryLabel = screen.getByLabelText(/Memory/i)
+		const cpuLabel = screen.getByLabelText(/Yes/i)
+		const memoryLabel = screen.getByLabelText(/No/i)
 		expect(allLabel).toBeInTheDocument()
 		expect(cpuLabel).toBeInTheDocument()
 		expect(memoryLabel).toBeInTheDocument()
