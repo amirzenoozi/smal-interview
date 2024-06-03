@@ -26,7 +26,7 @@ The project is developed with reusable components and the components are develop
 - [ ] Deployment
   - [x] Dockerfile
   - [x] GitHub Actions to Push Image to DockerHub
-  - [x] Deploy on external server
+  - [x] Deploy on the external server
 
 ## Run the project
 
@@ -38,11 +38,18 @@ In the project directory, you can run:
 - ``` yarn start ```
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Sprite SVG System
+Nowadays, SVG icons are one of the most common assets in Web applications. And we need to use them in our applications properly. Using `font-icon` system is one of the most common ways to render the SVG icons, however, in this way, we will treat them as a font while they are kind of vector. Using the `img` tag is our second option, but we don't want it since we are not able to use the SVG features including scaling and changing their colors, also in this way search engines index these assets as an Image and we don't want this. One of the best ways to render SVG icons is using SpriteSVG files, which enable us to render them wherever we want with an `SVG` tag. For more information:
+
+1. [Icon Fonts vs. SVG sprite](https://webfontapp.com/svg-sprite-vs-icon-font)
+2. [Icon Fonts vs SVGs](https://www.keycdn.com/blog/icon-fonts-vs-svgs)
+
 ## Other Available Scripts
 
 1. For Test: `yarn run test`
 2. For Build: `yarn run build`
 3. For Manual Setting: `yarn run eject`
+4. To Generate Sprite SVG file: `yarn run sprite`
 
 > **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
