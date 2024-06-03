@@ -6,6 +6,8 @@ The design is pixel perfect and mobile-first.
 The project is developed with React, TypeScript, and SCSS.
 The project is developed with reusable components and the components are developed with StoryBook.
 
+![Main](https://github.com/amirzenoozi/smal-interview/actions/workflows/docker-hub.yml/badge.svg?event=push)
+
 ## Objectives
 
 - [x] Developed Pixel Perfect Design
